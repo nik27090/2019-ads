@@ -62,7 +62,7 @@ public class AvlBst<Key extends Comparable<Key>, Value>
     private Node remove(Node x, Key key){
         if (x == null) return null;
         if (key.compareTo(x.key) < 0) x.left = remove(x.left,key);
-        else if (key.compareTo(x.key) < 0) x.right = remove(x.right,key);
+        else if (key.compareTo(x.key) > 0) x.right = remove(x.right,key);
         else x = innerDelete(x);
         return x;
     }
