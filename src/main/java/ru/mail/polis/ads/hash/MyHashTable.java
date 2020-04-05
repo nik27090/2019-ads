@@ -102,11 +102,10 @@ public class MyHashTable<Key extends Comparable<Key>,Value> implements HashTable
                 size--;
                 if (prevNode == null){
                     hashTable[hash] = delNode.next;
-                    return delNode.value;
                 } else {
                     prevNode.next = delNode.next;
-                    return delNode.value;
                 }
+                return delNode.value;
             }
             prevNode = delNode;
             delNode = delNode.next;
